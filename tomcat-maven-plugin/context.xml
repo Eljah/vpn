@@ -1,0 +1,7 @@
+<Context>
+    <Resource name="jdbc/postgres" auth="Container"
+              type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5432/paysoft_basiatest"
+              username="postgres" password="tatarstan"
+              maxIdle="10"/>
+</Context>

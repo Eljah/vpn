@@ -1,0 +1,37 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>VPNны дусларга тарату кушымтасы</display-name>
+    <security-constraint>
+        <display-name>SoapRouterConstraints</display-name>
+        <web-resource-collection>
+            <web-resource-name>VpnServlet</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Authorized roles</description>
+            <role-name>vpn-gui</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    <security-role>
+        <role-name>vpn-gui</role-name>
+    </security-role>
+<!--    <servlet>-->
+<!--        <servlet-name>vpn</servlet-name>-->
+<!--        <servlet-class>eljah.tatar.VpnServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>vpn</servlet-name>-->
+<!--        <url-pattern>/config</url-pattern>-->
+<!--    </servlet-mapping>-->
+</web-app>
